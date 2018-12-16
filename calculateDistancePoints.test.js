@@ -1,88 +1,49 @@
 const assert = require('assert');
-const calculateDistancePoints = require('./index');
+const calculateDistancePoints = require('./calculateDistancePoints.js');
 
+// parametrs (distance, hillSize, kPoint)
 describe('calculateDistancePoints', () => {
-    describe('seconds', () => {
-        it('should return seconds', () => {
-            const actual = formatDate(23);
+    describe('normal', () => {
+        it('should work when distance < kPoint', () => {
+            const actual = calculateDistancePoints(90.5, 'normal', 98);
     
-            const expected = '23s';
-    
-            assert.equal(actual, expected);
-        });
-
-        it('should return 0 seconds if no value is passed', () => {
-            const actual = formatDate();
-    
-            const expected = '0s';
+            const expected = 45;
     
             assert.equal(actual, expected);
         });
     });
 
-    describe('minutes', () => {
-        it('should work for one digit minutes and seconds', () => {
-            const actual = formatDate(65);
+    describe('big', () => {
+        it('should work when distance > kPoint', () => {
+            const actual = calculateDistancePoints(134, 'big', 120);
 
-            const expected = '1m 5s';
-
-            assert.equal(actual, expected);
-        });
-
-        it('should work for 2 digits minutes and seconds', () => {
-            const actual = formatDate(1414);
-
-            const expected = '23m 34s';
+            const expected = 85.2;
 
             assert.equal(actual, expected);
         });
 
-        it('should return only minutes', () => {
-            const actual = formatDate(780);
+        it('should work when distance === kPoint', () => {
+            const actual = calculateDistancePoints( 120, 'big' ,120);
 
-            const expected = '13m';
+            const expected = 60;
 
             assert.equal(actual, expected);
-        });
+        });        
     });
 
-    describe('hours', () => {
-        it('should work for one digit hours, minutes and seconds', () => {
-            const actual = formatDate(3723);
+    describe('mammoth', () => {
+        it('should work when distance > kPoint', () => {
+            const actual = calculateDistancePoints(227.5,'mammoth',200);
 
-            const expected = '1h 2m 3s';
-
-            assert.equal(actual, expected);
-        });
-
-        it('should work for 2 digit hours, minutes and seconds', () => {
-            const actual = formatDate(40333);
-
-            const expected = '11h 12m 13s';
+            const expected = 153;
 
             assert.equal(actual, expected);
         });
 
-        it('should work for hours only', () => {
-            const actual = formatDate('7200');
+        it('should work when distance < kPoint', () => {
+            const actual = calculateDistancePoints(187, 'mammoth',200);
 
-            const expected = '2h';
-
-            assert.equal(actual, expected);
-        });
-
-        it('should work for hours and minutes', () => {
-            const actual = formatDate(77820);
-
-            const expected = '21h 37m';
-
-            assert.equal(actual, expected);
-        });
-
-        it('should work for hours and seconds', () => {
-            const actual = formatDate('10815');
-
-            const expected = '3h 15s';
+            const expected = 104.4;
 
             assert.equal(actual, expected);
         });

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
+  "scripts": {    
     "style": "mocha calculateStylePoints.test.js",
     "dis": "mocha calculateDistancePoints.test.js",
     "test": "mocha ./*.test.js",
