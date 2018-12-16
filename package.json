@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha index.test.js ",
+    "style": "mocha calculateStylePoints.test.js",
+    "dis": "mocha calculateDistancePoints.test.js",
+    "test": "mocha ./*.test.js",
     "test:watch": "onchange \"./*.js\" -- npm test"
   },
   "repository": {

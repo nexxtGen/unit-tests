@@ -1,7 +1,7 @@
 const assert = require('assert');
-const calculateTotalPoints = require('./index');
+const calculateDistancePoints = require('./index');
 
-describe('calculateTotalPoints', () => {
+describe('calculateDistancePoints', () => {
     describe('seconds', () => {
         it('should return seconds', () => {
             const actual = formatDate(23);
