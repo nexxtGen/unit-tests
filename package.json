@@ -6,7 +6,7 @@
   "scripts": {    
     "style": "mocha calculateStylePoints.test.js",
     "dis": "mocha calculateDistancePoints.test.js",
-    "test": "mocha ./*.test.js",
+    "test": "mocha index.test.js",
     "test:watch": "onchange \"./*.js\" -- npm test"
   },
   "repository": {
