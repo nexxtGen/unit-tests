@@ -1,0 +1,25 @@
+{
+  "name": "unit-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha index.test.js -b",
+    "test:watch": "onchange \"./*.js\" -- npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nexxtGen/unit-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nexxtGen/unit-tests/issues"
+  },
+  "homepage": "https://github.com/nexxtGen/unit-tests#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "onchange": "^5.2.0"
+  }
+}
