@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha index.test.js -b",
+    "test": "mocha index.test.js ",
     "test:watch": "onchange \"./*.js\" -- npm test"
   },
   "repository": {
